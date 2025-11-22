@@ -1,8 +1,53 @@
 #include "agenda.h"
+#include <stdio.h>
+#include <string.h>
 
+#define MAX_CONTACTOS 100
+#define LONG_NOMBRE 50
+#define LONG_TEL 20
+#define NOMBRE_ARCHIVO "agenda.txt"
+
+typedef struct{
+char nombre[LONG_NOMBRE];
+char telefono[LONG_TEL];
+}Contacto;
+Contacto agenda[MAX_CONTACTOS];
+int numContactos=0;
+
+void cargarContactos();
+void guardarContactos();
+void agregarContactos();
+void mostrarContactos();
+void ordenarContactos();
+void buscarContactos();
+void crearContactos();
+void limpiarBuffer();
+
+int main(){
+int opcion;
+cargar contactos();
+if (numContactos==0){
+crearDatosPrueba();
+}
+do{
+printf("\n Agenda telefonica\n");
+printf("1.Agregar contacto\n");
+printf("2.Mostrar todos los contactos\n");
+printf("3.Ordenar alfabeticamente\n");
+printf("4.Buscar contacto\n");
+printf("5.Salir\n");
+printf("\n");
+scanf("\n10");
+limpiarBuffer();
+inputs
+switch(opcion){}
+case 1:
+    agregarContacto();
+    break;
+    
 /**
- * Esta función se encarga de iniciar el número de contactos a cero
- */
+*Esta función se encarga de iniciar el número de contactos a cero
+*/
 void iniciar_agenda(Agenda *agenda){
 
 }
