@@ -3,37 +3,45 @@
 
 #define MAX_CONTACTOS 100
 
-enum TipoTelefono {CASA, MOVIL, OFICINA, OTRO};
-enum Mes{ENERO, FEBERO, MARZO, ABRIL, MAYO, JUNIO, JULIO, SEPTIEMBRE, OCTUBRE, NOVIEMBRE, DICIEMBRE};
+enum TipoTelefono {
+    CASA,
+    MOVIL,
+    OFICINA,
+    OTRO
+};
 
-struct Persona{
+enum Mes {
+    ENERO, FEBRERO, MARZO, ABRIL,
+    MAYO, JUNIO, JULIO, AGOSTO,
+    SEPTIEMBRE, OCTUBRE, NOVIEMBRE, DICIEMBRE
+};
+
+struct Persona {
     char nombre[30];
-    // apellido
-    // mes de nacimiento
-    // dia de nacimiento
-    // tipo contacto
-    // numero de telefono
-    // tipo de numero
+    char apellido[30];
+    enum Mes mes_nacimiento;
+    int dia_nacimiento;
+    char tipo_contacto[20];
+    char telefono[20];
+    enum TipoTelefono tipo_tel;
 };
 
 typedef struct Persona Contacto;
 
-typedef struct Agenda{
+typedef struct Agenda {
     Contacto contactos[MAX_CONTACTOS];
-    int num_contactos; //Lleva la cuenta de cuantos contactos están en la agenda
+    int num_contactos;
 } Agenda;
 
 
-void iniciar_agenda(Agenda *agenda);
-void agregar_contacto(Agenda *agenda, Contacto c);
-void imprimir_agenda(Agenda agenda);
-int buscar_contacto(Agenda *agenda, char *nombre);
-int buscar_contacto_x_telefono(Agenda *agenda, char telefono[]);
-void ordenar_contactos(Agenda *agenda);
-void ordenar_contactos_inv(Agenda *agenda);
-void mostrar_contacto(Contacto);
-void leer_contacto(Contacto *c);
-void cargar_contactos(char *filename);
-void guardar_contactos(char *filename);
+void agregar_contacto();
+void mostrar_agenda();
+void ordenalfa();
+void buscarnom();
+void buscarnum();
+void ponernum();
+void quitar_numeros();
 
-#endif // __AGENDA_H_
+
+#endif // __AGENDA_H__
+
